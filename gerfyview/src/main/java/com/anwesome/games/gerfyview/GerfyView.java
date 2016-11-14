@@ -18,7 +18,7 @@ public class GerfyView extends View{
     private int DELAY = 50,R_SCALE = 36,H_SCALE = 6,MAX_SCALE=3;
     private float ry = 0;
     private String color = "#2196F3";
-    private int textSize = 20,textColor = Color.BLACK,w,h;
+    private int textSize = 60,textColor = Color.BLACK,w,h;
     private String text="";
     private OnClickListener clickListener;
     private boolean shouldAnimate = false,loaded = false;
@@ -45,10 +45,7 @@ public class GerfyView extends View{
         this.textColor = textColor;
     }
     public void onDraw(Canvas canvas) {
-        paint.setTextSize(textSize/3);
-        paint.setColor(textColor);
-        float textSize = paint.measureText(getText());
-        canvas.drawText(text,w/2-textSize/2,h/2-textSize/2,paint);
+
         paint.setColor(Color.parseColor(color));
         canvas.save();
         canvas.translate(w/2,h/2);
@@ -60,6 +57,11 @@ public class GerfyView extends View{
         drawCurve(path,0,h/H_SCALE,w/2,ry,0);
         canvas.drawPath(path,paint);
         canvas.restore();
+        paint.setTextSize(textSize);
+        float textSize = paint.measureText(getText());
+        paint.setColor(textColor);
+        canvas.drawText(text,w/2-textSize/2,h/2-textSize/15,paint);
+
         if(shouldAnimate) {
             ry+=h/(R_SCALE);
             if(ry>=(h/3-h/H_SCALE)){

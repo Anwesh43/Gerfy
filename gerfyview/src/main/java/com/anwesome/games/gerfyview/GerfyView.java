@@ -9,8 +9,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import android.widget.TextView;
-
 /**
  * Created by anweshmishra on 14/11/16.
  */
@@ -60,7 +58,7 @@ public class GerfyView extends View{
         paint.setTextSize(textSize);
         float textSize = paint.measureText(getText());
         paint.setColor(textColor);
-        canvas.drawText(text,w/2-textSize/2,h/2-textSize/15,paint);
+        canvas.drawText(text,w/2-textSize/2,7*h/12-textSize/15,paint);
 
         if(shouldAnimate) {
             ry+=h/(R_SCALE);

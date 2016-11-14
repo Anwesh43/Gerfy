@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         gerfyView = (GerfyView)findViewById(R.id.hello);
         gerfyView.setText("Hello");
         gerfyView.setTextColor(Color.WHITE);
+
         //gerfyView.setLayoutParams(new LinearLayout.LayoutParams(100,100));
         gerfyView.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View view) {
